@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 /*
  * @lc app=leetcode id=394 lang=cpp
  *
@@ -83,3 +85,14 @@ class Solution {
       return solve(s, pos);
     } 
 };
+
+int main() {
+  Solution *sol = new Solution();
+  int t;
+  cin >> t;
+  while (t--) {
+    string s;
+    cin >> s;
+    cout << sol->decodeString(s) << endl;
+  }
+}
