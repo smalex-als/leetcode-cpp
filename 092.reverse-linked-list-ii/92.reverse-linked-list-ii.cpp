@@ -50,6 +50,9 @@ struct LinkedList {
   ListNode *head = nullptr;
   ListNode *tail = nullptr;
 
+  LinkedList() {}
+  LinkedList(ListNode *head) : head(head) {}
+
   void Append(LinkedList *src) {
     if (tail) {
       tail->next = src->head;
@@ -136,28 +139,33 @@ ListNode *makeList(vector<int> a) {
   return head;
 }
 
-void Dump(ListNode *head) {
+string to_string(ListNode *head) {
+  string res;
   ListNode *cur = head;
+  bool first = true;
   while (cur) {
-    cout << cur->val << " ";
+    if (!first) {
+      res += " ";
+    }
+    first = false;
+    res += to_string(cur->val);
     cur = cur->next;
   }
-  cout << endl;
+  return res;
 }
 
 int main() {
   Solution *sol = new Solution();
-  {
-    Dump(sol->reverseBetween(makeList({1,2,3,4,5}), 2, 4));
-  }
-  {
-    Dump(sol->reverseBetween(makeList({5}), 1, 1));
-  }
-  {
-    Dump(sol->reverseBetween(makeList({1,2,3,4,5}), 1, 5));
-  }
-  {
-    Dump(sol->reverseBetween(makeList({1,2,3,4,5}), 1, 3));
+  int t;
+  cin >> t;
+  while (t--) {
+    int n, l, r;
+    cin >> n >> l >> r;
+    vector<int> a(n);
+    for (int i = 0; i < n; ++i) {
+      cin >> a[i];
+    }
+    cout << to_string(sol->reverseBetween(makeList(a), l, r)) << endl;
   }
 }
 

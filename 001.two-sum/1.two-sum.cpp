@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 /*
  * @lc app=leetcode id=1 lang=cpp
  *
@@ -70,3 +72,22 @@ class Solution {
       return {};
     }
 };
+
+int main() {
+  Solution *sol = new Solution();
+  int t;
+  cin >> t;
+  while (t--) {
+    int n, x;
+    cin >> n >> x;
+    vector<int> a(n);
+    for (int i = 0; i < n; ++i) {
+      cin >> a[i];
+    }
+    vector<int> res = sol->twoSum(a, x);
+    for (int i : res) {
+      cout << i << " ";
+    }
+    cout << endl;
+  }
+}
