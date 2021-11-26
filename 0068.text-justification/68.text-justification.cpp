@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 //Given an array of strings words and a width maxWidth, format the text such 
 //that each line has exactly maxWidth characters and is fully (left and right) 
 //justified. 
@@ -81,7 +83,6 @@
 // Related Topics Array String Simulation 👍 1415 👎 2470
 
 
-//leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
 public:
   vector<int> getSpaces(int spaces, int cnt, int w, int len, bool lastRow) {
@@ -161,4 +162,21 @@ public:
     return res;
   }
 };
-//leetcode submit region end(Prohibit modification and deletion)
+
+int main() {
+  Solution *sol = new Solution();
+  int t;
+  cin >> t;
+  while (t--) {
+    int n, w;
+    cin >> n >> w;
+    vector<string> a(n);
+    for (int i = 0; i < n; ++i) {
+      cin >> a[i];
+    }
+    for (string s : sol->fullJustify(a, w)) {
+      cout << s << endl;
+    }
+  }
+}
+
