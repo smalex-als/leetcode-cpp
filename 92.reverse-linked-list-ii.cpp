@@ -153,5 +153,11 @@ int main() {
   {
     Dump(sol->reverseBetween(makeList({5}), 1, 1));
   }
+  {
+    Dump(sol->reverseBetween(makeList({1,2,3,4,5}), 1, 5));
+  }
+  {
+    Dump(sol->reverseBetween(makeList({1,2,3,4,5}), 1, 3));
+  }
 }
 
