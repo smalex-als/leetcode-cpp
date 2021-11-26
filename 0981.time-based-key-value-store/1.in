@@ -1,0 +1,8 @@
+1
+6
+set foo bar 1
+get foo 1
+get foo 3
+set foo bar2 4
+get foo 4
+get foo 5
