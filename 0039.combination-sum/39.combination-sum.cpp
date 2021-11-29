@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 /*
  * @lc app=leetcode id=39 lang=cpp
  *
@@ -108,16 +109,26 @@ public:
 };
 
 int main() {
-  auto sol = new Solution();
-  vector<int> candidates = {2,3,6,7};
-  int target = 7;
- // Output: [[2,2,3],[7]]
-  vector<vector<int>> ans1 = sol->combinationSum(candidates, target);
-  cout << ans1.size() << endl;
-  for (vector<int> row : ans1) {
-    for (int val : row) {
-      cout << val << " ";
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+
+  int t;
+  cin >> t;
+  while (t--) {
+    Solution *sol = new Solution();
+    int n, x;
+    cin >> n >> x;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+      cin >> a[i];
     }
-    cout << endl;
+    vector<vector<int>> ans1 = sol->combinationSum(a, x);
+    cout << ans1.size() << endl;
+    for (vector<int> row : ans1) {
+      for (int val : row) {
+        cout << val << " ";
+      }
+      cout << endl;
+    }
   }
 }
