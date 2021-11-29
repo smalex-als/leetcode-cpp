@@ -87,6 +87,8 @@ class Solution {
 };
 
 int main() {
+  ios::sync_with_stdio(false);
+  cin.tie(0);
   Solution *sol = new Solution();
   int t;
   cin >> t;
