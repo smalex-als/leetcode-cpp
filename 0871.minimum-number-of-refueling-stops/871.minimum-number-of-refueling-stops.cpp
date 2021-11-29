@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 /*
  * @lc app=leetcode id=871 lang=cpp
  *
@@ -100,3 +102,20 @@ public:
       return ans;
     }
 };
+
+int main() {
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+  int t;
+  cin >> t;
+  while (t--) {
+    int n, target, tank;
+    cin >> n >> target >> tank;
+    vector<vector<int>> stations(n, vector<int>(2));
+    for (int i = 0; i < n; i++) {
+      cin >> stations[i][0] >> stations[i][1];
+    }
+    Solution *sol = new Solution();
+    cout << sol->minRefuelStops(target, tank, stations) << endl;
+  }
+}
