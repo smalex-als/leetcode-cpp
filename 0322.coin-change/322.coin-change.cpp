@@ -84,9 +84,19 @@ public:
 };
 
 int main() {
-  Solution *sol = new Solution();
-  vector<int> coins = {1, 2, 5};
-  int amount = 11;
-  int cnt = sol->coinChange(coins, amount);
-  cout << cnt << endl;
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+
+  int t;
+  cin >> t;
+  while (t--) {
+    Solution *sol = new Solution();
+    int n, x;
+    cin >> n >> x;
+    vector<int> coins(n);
+    for (int i = 0; i < n; ++i) {
+      cin >> coins[i];
+    }
+    cout << sol->coinChange(coins, x) << endl;
+  }
 }
