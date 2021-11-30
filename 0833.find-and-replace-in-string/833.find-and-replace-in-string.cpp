@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 /*
  * @lc app=leetcode id=833 lang=cpp
  *
@@ -115,3 +117,32 @@
        return res;
      }
  };
+
+int main() {
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+  
+  int t;
+  cin >> t;
+  while (t--) {
+    string s;
+    cin >> s;
+    int n;
+    cin >> n;
+    vector<int> indices(n);
+    vector<string> sources(n);
+    vector<string> targets(n);
+    for (int i = 0; i < n; ++i) {
+      cin >> indices[i];
+    }
+    for (int i = 0; i < n; ++i) {
+      cin >> sources[i];
+    }
+    for (int i = 0; i < n; ++i) {
+      cin >> targets[i];
+    }
+    auto sol = new Solution();
+    auto res = sol->findReplaceString(s, indices, sources, targets);
+    cout << res << endl;
+  }
+}
