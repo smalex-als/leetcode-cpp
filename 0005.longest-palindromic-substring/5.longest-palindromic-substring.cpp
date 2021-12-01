@@ -1,5 +1,25 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <map>
+#include <set>
+#include <stack>
+#include <algorithm>
+#include <array>
+#include <unordered_map>
+#include <queue>
+#include <unordered_set>
+#include <iomanip>
+#include <zconf.h>
+
+#define pb push_back
+#define sz(v) ((int)(v).size())
+#define all(v) (v).begin(),(v).end()
+
 using namespace std;
+
+typedef long long int64;
+typedef vector<int> vi;
+typedef pair<int, int> ii;
 /*
  * @lc app=leetcode id=5 lang=cpp
  *
@@ -81,7 +101,15 @@ public:
 };
 
 int main() {
-  auto sol = new Solution();
-  string ans = sol->longestPalindrome("babad");
-  cout << ans << endl;
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+  
+  int t;
+  cin >> t;
+  while (t--) {
+    auto sol = new Solution();
+    string s;
+    cin >> s;
+    cout << sol->longestPalindrome(s) << endl;
+  }
 }
