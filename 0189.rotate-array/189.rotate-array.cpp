@@ -1,5 +1,26 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <map>
+#include <set>
+#include <stack>
+#include <algorithm>
+#include <array>
+#include <unordered_map>
+#include <queue>
+#include <unordered_set>
+#include <iomanip>
+#include <zconf.h>
+
+#define pb push_back
+#define sz(v) ((int)(v).size())
+#define all(v) (v).begin(),(v).end()
+
 using namespace std;
+
+typedef long long int64;
+typedef vector<int> vi;
+typedef pair<int, int> ii;
+
 /*
  * @lc app=leetcode id=189 lang=cpp
  *
@@ -68,12 +89,23 @@ public:
 };
 
 int main() {
-  auto sol = new Solution();
-  vector<int> nums = {1,2,3,4,5,6,7};
-  sol->rotate(nums, 3);
-  for(int i : nums) {
-    cout << i << " ";
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+
+  int t;
+  cin >> t;
+  while (t--) {
+    auto sol = new Solution();
+    int n, k;
+    cin >> n >> k;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+      cin >> a[i];
+    }
+    sol->rotate(a, k);
+    for (int i : a) {
+      cout << i << " ";
+    }
+    cout << endl;
   }
-  cout << endl;
-  return 0;
 }
