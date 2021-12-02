@@ -1,5 +1,25 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <map>
+#include <set>
+#include <stack>
+#include <algorithm>
+#include <array>
+#include <unordered_map>
+#include <queue>
+#include <unordered_set>
+#include <iomanip>
+#include <zconf.h>
+
+#define pb push_back
+#define sz(v) ((int)(v).size())
+#define all(v) (v).begin(),(v).end()
+
 using namespace std;
+
+typedef long long int64;
+typedef vector<int> vi;
+typedef pair<int, int> ii;
 //You are given an integer num. You can swap two digits at most once to get the 
 //maximum valued number. 
 //
@@ -45,7 +65,7 @@ public:
       }
       if (s[i] > s[best]) {
         best = i;
-      }
+    }
     }
     if (l != -1) {
       swap(s[l], s[r]);
@@ -55,7 +75,15 @@ public:
 };
 
 int main() {
-  auto sol = new Solution();
-  cout << (7236 == sol->maximumSwap(2736)) << endl;
-  cout << (9973 == sol->maximumSwap(9973)) << endl;
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+  
+  int t;
+  cin >> t;
+  while (t--) {
+    auto sol = new Solution();
+    int n;
+    cin >> n;
+    cout << sol->maximumSwap(n) << endl;
+  }
 }
