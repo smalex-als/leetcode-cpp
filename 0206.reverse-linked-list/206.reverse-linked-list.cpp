@@ -42,13 +42,14 @@ using namespace std;
 /**
  * Definition for singly-linked list.
  */
- struct ListNode {
-     int val;
-     ListNode *next;
-     ListNode() : val(0), next(nullptr) {}
-     ListNode(int x) : val(x), next(nullptr) {}
-     ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
+  struct ListNode {
+      int val;
+      ListNode *next;
+      ListNode() : val(0), next(nullptr) {}
+      ListNode(int x) : val(x), next(nullptr) {}
+      ListNode(int x, ListNode *next) : val(x), next(next) {}
+  };
+ 
 
 class Solution {
 public:
@@ -95,7 +96,20 @@ void Dump(ListNode *head) {
 }
 
 int main() {
-  Solution *sol = new Solution();
-  Dump(sol->reverseList(makeList({1,2,3,4,5})));
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+  
+  int t;
+  cin >> t;
+  while (t--) {
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+      cin >> a[i];
+    }
+    Solution *sol = new Solution();
+    Dump(sol->reverseList(makeList(a)));
+  }
 }
 
