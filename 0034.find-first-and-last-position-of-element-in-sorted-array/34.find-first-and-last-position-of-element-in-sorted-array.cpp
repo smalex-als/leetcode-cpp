@@ -57,16 +57,22 @@ public:
 };
 
 int main() {
-  auto sol = new Solution();
-  vector<int> nums = {5,7,7,8,8,10};
-  auto res = sol->searchRange(nums, 8);
-  cout << res[0] << " " << res[1] << endl;
-  auto res2 = sol->searchRange(nums, 6);
-  cout << res2[0] << " " << res2[1] << endl;
-  vector<int> nums2 = {1};
-  auto res3 = sol->searchRange(nums2, 1);
-  cout << res3[0] << " " << res3[1] << endl;
-  vector<int> nums3 = {1,2,3};
-  auto res4 = sol->searchRange(nums3, 1);
-  cout << res3[0] << " " << res3[1] << endl;
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+  
+  int t;
+  cin >> t;
+  while (t--) {
+    int n, x;
+    cin >> n >> x;
+    vector<int> a(n);
+    for (int i = 0; i < n; ++i) {
+      cin >> a[i];
+    }
+    auto sol = new Solution();
+    for (int i : sol->searchRange(a, x)) {
+      cout << i << " ";
+    }
+    cout << endl;
+  }
 }
