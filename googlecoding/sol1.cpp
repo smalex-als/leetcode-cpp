@@ -13,7 +13,7 @@ struct GenID {
   int nextId = 1;
 
   int reserveAny() {
-    if (end[nextId] != 0) {
+    if (start[nextId] != 0) {
       nextId = end[nextId]+1;
     }
     int val = nextId;
@@ -22,6 +22,9 @@ struct GenID {
   }
 
   bool reserveID(int i) {
+    if (start[i]) {
+      return false;
+    }
     if (start[i-1] == 0 && start[i+1] == 0) {
       start[i] = i;
       end[i] = i;
