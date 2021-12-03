@@ -40,9 +40,9 @@ struct GenID {
   }
 
   int reserveID(int i) {
-    int id = get(i);
-    p[id] = get(id + 1);
-    return id;
+    i = get(i);
+    p[i] = get(i + 1);
+    return i;
   }
 };
   
