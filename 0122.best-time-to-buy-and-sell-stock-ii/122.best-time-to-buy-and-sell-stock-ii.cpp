@@ -1,5 +1,25 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <map>
+#include <set>
+#include <stack>
+#include <algorithm>
+#include <array>
+#include <unordered_map>
+#include <queue>
+#include <unordered_set>
+#include <iomanip>
+#include <zconf.h>
+
+#define pb push_back
+#define sz(v) ((int)(v).size())
+#define all(v) (v).begin(),(v).end()
+
 using namespace std;
+
+typedef long long int64;
+typedef vector<int> vi;
+typedef pair<int, int> ii;
 // You are given an integer array prices where prices[i] is the price of a given 
 // stock on the iᵗʰ day. 
 // 
@@ -63,8 +83,19 @@ public:
 };
 
 int main() {
-  vector<int> prices = {7,1,5,3,6,4};
-  auto sol = new Solution();
-  auto res = sol->maxProfit(prices);
-  cout << res << endl;
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+
+  int t;
+  cin >> t;
+  while (t--) {
+    int n;
+    cin >> n;
+    vector<int> prices(n);
+    for (int i = 0; i < n; i++) {
+      cin >> prices[i];
+    }
+    auto sol = new Solution();
+    cout << sol->maxProfit(prices) << endl;
+  }
 }
