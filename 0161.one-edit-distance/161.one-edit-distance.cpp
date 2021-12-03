@@ -66,6 +66,7 @@ using namespace std;
  * 
  * 
  */
+
 class Solution {
 public:
   bool isOneEditDistance(string s, string t) {
@@ -85,12 +86,14 @@ public:
 };
 
 int main() {
-  auto sol = new Solution();
-  cout << sol->isOneEditDistance("a", "A") << endl;
-  // cout << sol->isOneEditDistance("a", "") << endl;
-  // cout << sol->isOneEditDistance("ab", "acb") << endl;
-  // cout << sol->isOneEditDistance("denis", "dennis") << endl;
-  // cout << sol->isOneEditDistance("dennis", "denis") << endl;
-  // cout << sol->isOneEditDistance("alex", "alexander") << endl;
-  // cout << sol->isOneEditDistance("", "") << endl;
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+  int t;
+  cin >> t;
+  while (t--) {
+    string a, b;
+    cin >> a >> b;
+    auto sol = new Solution();
+    cout << sol->isOneEditDistance(a, b) << endl;
+  }
 }
