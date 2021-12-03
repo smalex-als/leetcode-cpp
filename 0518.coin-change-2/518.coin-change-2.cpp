@@ -1,5 +1,25 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <map>
+#include <set>
+#include <stack>
+#include <algorithm>
+#include <array>
+#include <unordered_map>
+#include <queue>
+#include <unordered_set>
+#include <iomanip>
+#include <zconf.h>
+
+#define pb push_back
+#define sz(v) ((int)(v).size())
+#define all(v) (v).begin(),(v).end()
+
 using namespace std;
+
+typedef long long int64;
+typedef vector<int> vi;
+typedef pair<int, int> ii;
 /*
  * @lc app=leetcode id=518 lang=cpp
  *
@@ -77,7 +97,18 @@ public:
 };
 
 int main() {
-  Solution *sol = new Solution();
-  vector<int> coins = {1,2,5};
-  cout << sol->change(5, coins);
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+  int t;
+  cin >> t;
+  while (t--) {
+    int n, x;
+    cin >> n >> x;
+    vector<int> coins(n);
+    for (int i = 0; i < n; i++) {
+      cin >> coins[i];
+    }
+    Solution *sol = new Solution();
+    cout << sol->change(x, coins) << endl;
+  }
 }
