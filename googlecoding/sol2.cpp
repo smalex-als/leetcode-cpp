@@ -69,15 +69,5 @@ int main() {
       }
     }
     cout << endl;
-    // cout << "start ";
-    // for (int i : genID.start) {
-    //   cout << i << " ";
-    // }
-    // cout << endl;
-    // cout << "end ";
-    // for (int i : genID.end) {
-    //   cout << i << " ";
-    // }
-    // cout << endl;
   }
 }
