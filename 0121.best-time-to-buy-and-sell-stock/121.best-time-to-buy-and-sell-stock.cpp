@@ -1,5 +1,25 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <map>
+#include <set>
+#include <stack>
+#include <algorithm>
+#include <array>
+#include <unordered_map>
+#include <queue>
+#include <unordered_set>
+#include <iomanip>
+#include <zconf.h>
+
+#define pb push_back
+#define sz(v) ((int)(v).size())
+#define all(v) (v).begin(),(v).end()
+
 using namespace std;
+
+typedef long long int64;
+typedef vector<int> vi;
+typedef pair<int, int> ii;
 /*
  * @lc app=leetcode id=121 lang=cpp
  *
@@ -66,8 +86,19 @@ public:
 };
 
 int main() {
-  auto sol = new Solution();
-  vector<int> prices1 = {7, 1, 5, 3, 6, 4};
-  int ans1 = sol->maxProfit(prices);
-  cout << ans1 << endl;
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+  
+  int t;
+  cin >> t;
+  while (t--) {
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; ++i) {
+      cin >> a[i];
+    }
+    auto sol = new Solution();
+    cout << sol->maxProfit(a) << endl;
+  }
 }
