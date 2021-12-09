@@ -111,19 +111,7 @@ int main() {
   int t;
   cin >> t;
   while (t--) {
-    int n;
-    cin >> n;
-    vector<int> a(n);
-    for (int i = 0; i < n; i++) {
-      string s;
-      cin >> s;
-      int val = INT_MAX;
-      if (s != "null") {
-        val = stoi(s);
-      }
-      a[i] = val;
-    }
-    TreeNode *tree = makeTree(a);
+    TreeNode *tree = readTree();
     Solution *sol = new Solution();
     cout << sol->isValidBST(tree) << endl;
   }

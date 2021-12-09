@@ -38,3 +38,18 @@ TreeNode *makeTree(vector<int> &a) {
   return NULL;
 }
 
+TreeNode *readTree() {
+  int n;
+  cin >> n;
+  vector<int> a(n);
+  for (int i = 0; i < n; i++) {
+    string s;
+    cin >> s;
+    int val = INT_MAX;
+    if (s != "null") {
+      val = stoi(s);
+    }
+    a[i] = val;
+  }
+  return makeTree(a);
+}
