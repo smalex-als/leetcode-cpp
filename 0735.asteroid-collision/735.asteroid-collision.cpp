@@ -95,7 +95,6 @@ class Solution {
 public:
   vector<int> asteroidCollision(vector<int>& a) {
     int n = a.size();
-    vector<int> res;
     stack<int> st;
     for (int i = 0; i < n; i++) {
       if (!st.empty() && st.top() > 0 && a[i] < 0) {
@@ -109,6 +108,7 @@ public:
         st.push(a[i]);
       }
     }
+    vector<int> res;
     while (!st.empty()) {
       res.push_back(st.top());
       st.pop();
@@ -138,5 +138,4 @@ int main() {
     }
     cout << endl;
   }
-  
 }

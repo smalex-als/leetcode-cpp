@@ -71,9 +71,6 @@ typedef pair<int, int> ii;
  */
 class Solution {
 public:
-  int jumpPrev(vector<int>& nums) {
-    return 0;
-  }
   int jump(vector<int>& nums) {
     if (nums.size() < 2) {
       return 0;
