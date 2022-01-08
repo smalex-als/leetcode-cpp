@@ -90,8 +90,8 @@ public:
     }
     int l = solve(node->left);
     int r = solve(node->right);
-    mx = max(mx, l + r);
-    return max(l, r) + 1;
+    
+    return l + r + 1;
   }
 
   int diameterOfBinaryTree(TreeNode* root) {

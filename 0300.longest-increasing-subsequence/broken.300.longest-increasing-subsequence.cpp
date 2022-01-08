@@ -83,7 +83,7 @@ public:
   int lengthOfLIS(vector<int>& nums) {
     vector<int> res;
     for (int i = 0; i < nums.size(); i++) {
-      int j = lower_bound(res.begin(), res.end(), nums[i]) - res.begin();
+      int j = 
       if (j == res.size()) {
         res.push_back(nums[i]);
       } else {

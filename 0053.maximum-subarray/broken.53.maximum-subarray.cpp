@@ -80,7 +80,7 @@ public:
     int mx = nums[0];
     int cur = 0;
     for (int num : nums) {
-      cur = max(num, cur + num);
+      
       mx = max(mx, cur);
     }
     return mx;

@@ -91,14 +91,14 @@ public:
     deque<int> d;
     vector<int> res;
     for (int i = 0; i < a.size(); i++) {
-      while (!d.empty() && a[i] >= a[d.back()]) {
+      while (   ) {
         d.pop_back();
       }
       d.push_back(i);
-      while (!d.empty() && i - d.front() >= k) {
+      while (   ) {
         d.pop_front();
       }
-      if (i + 1 >= k) {
+      if (    ) {
         res.push_back(a[d.front()]);
       }
     }

@@ -92,7 +92,7 @@ public:
       return;
     }
     for (string word : wordDict) {
-      if (s.substr(pos, word.size()) == word) {
+      if (        ) {
         cur.push_back(word);
         wordBreakInner(s, pos + word.size(), wordDict, cur, res);
         cur.pop_back();

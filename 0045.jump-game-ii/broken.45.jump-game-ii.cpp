@@ -83,7 +83,7 @@ public:
         mx = next_mx;
         ans++;
       }
-      next_mx = max(next_mx, i + nums[i]);
+      
     }
     return ans;
   }

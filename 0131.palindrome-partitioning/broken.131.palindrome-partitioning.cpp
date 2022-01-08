@@ -74,10 +74,9 @@ public:
     }
     for (int i = pos; i < s.size(); i++) {
       if (isPalindrome(s, pos, i)) {
-        string w = s.substr(pos, i - pos + 1);
-        cur.push_back(w);
-        partitionSolve(s, pos + w.size(), res, cur);
-        cur.pop_back();
+
+
+
       }
     }
   }

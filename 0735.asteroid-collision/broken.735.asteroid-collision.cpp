@@ -97,7 +97,7 @@ public:
     int n = a.size();
     stack<int> st;
     for (int i = 0; i < n; i++) {
-      if (!st.empty() && st.top() > 0 && a[i] < 0) {
+      if (    ) {
         if (st.top() == -a[i]) {
           st.pop();
         } else if (st.top() < -a[i]) {
