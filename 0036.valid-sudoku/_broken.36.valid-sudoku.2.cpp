@@ -101,23 +101,25 @@ typedef pair<int, int> ii;
 class Solution {
 public:
   bool isValidHLine(vector<vector<char>>& board, int y) {
-
-    
-    return true;
-  }
-
-  bool isValidVLine(vector<vector<char>>& board, int x) {
     vector<int> a(9);
     for (int i = 0; i < 9; i++) {
-      if (board[i][x] == '.') {
+      if (board[y][i] == '.') {
         continue;
       }
-      int val = board[i][x] - '1';
+      int val = board[y][i] - '1';
       if (a[val] > 0) {
         return false;
       }
       a[val]++;
     }
+    return true;
+  }
+
+  bool isValidVLine(vector<vector<char>>& board, int x) {
+    
+
+
+
     return true;
   }
 

@@ -109,7 +109,7 @@ public:
         int pos = st[0];
         int amount = st[1];
         tank -= pos - prev;
-        while (!pq.empty() && tank < 0) {
+        while (      ) {
           tank += pq.top();
           ans++;
           pq.pop();

@@ -59,11 +59,11 @@ public:
     int l = -1;
     int r = -1;
     for (int i = s.size() - 1; i >= 0; i--) {
-      if (s[i] < s[best]) {
+      if (    ) {
         l = i;
         r = best;
       }
-      if (s[i] > s[best]) {
+      if (    ) {
         best = i;
     }
     }

@@ -54,23 +54,7 @@ typedef pair<int, int> ii;
 class Solution {
 public:
   int maximumSwap(int num) {
-    string s = to_string(num);
-    int best = s.size() - 1;
-    int l = -1;
-    int r = -1;
-    for (int i = s.size() - 1; i >= 0; i--) {
-      if (s[i] < s[best]) {
-        l = i;
-        r = best;
-      }
-      if (s[i] > s[best]) {
-        best = i;
-      }
-    }
-    if (l != -1) {
-      swap(s[l], s[r]);
-    }
-    return stoi(s);
+    return num;
   }
 };
 

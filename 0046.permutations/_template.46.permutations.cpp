@@ -59,25 +59,8 @@ typedef pair<int, int> ii;
  */
 class Solution {
 public:
-  bool next_perm(vector<int>& nums, vector<vector<int>> &res) {
-    int i = nums.size() - 1;
-    while (    ) i--;
-    if (i == 0) {
-      return false;
-    }
-    int j = nums.size() - 1;
-    while (     ) j--;
-    swap(nums[j], nums[i-1]);
-    reverse(nums.begin() + i, nums.end()); 
-    res.push_back(nums);
-    return true;
-  }
-
   vector<vector<int>> permute(vector<int>& nums) {
     vector<vector<int>> res;
-    sort(all(nums));
-    res.push_back(nums);
-    while (next_perm(nums, res));
     return res;
   }
 };

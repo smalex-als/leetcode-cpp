@@ -64,7 +64,7 @@ public:
       auto advance = waiting[c];
       waiting[c].clear();
       for (auto it: advance)
-        waiting[words[it.first][it.second++]].push_back(it);
+        waiting[    ].push_back(it);
     }
     return waiting[0].size();
   }

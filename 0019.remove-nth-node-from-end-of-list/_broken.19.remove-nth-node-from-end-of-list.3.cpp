@@ -95,17 +95,16 @@ public:
       fast = fast->next;
     }
     if (fast == nullptr) {
-
-
+      ListNode *next = head->next;
+      head->next = nullptr;
+      return next;
     }
     ListNode *slow = head;
     while (fast->next) {
       fast = fast->next;
       slow = slow->next;
     }
-    ListNode *node = slow->next;
-    slow->next = node->next;
-    node->next = nullptr;
+
     
     return head;
   }

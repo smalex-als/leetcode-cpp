@@ -67,11 +67,9 @@ public:
     }
     for (int i = 0; i < nums.size(); i++) {
       if (!used[i]) {
-        used[i] = true;
-        cur.push_back(nums[i]);
-        dfs(res, nums, cur, used);
-        cur.pop_back();
-        used[i] = false;
+
+
+
       }
     }
   }

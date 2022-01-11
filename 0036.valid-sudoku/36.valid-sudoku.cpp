@@ -149,27 +149,6 @@ public:
     return true;
   }
 
-  bool dfs(vector<vector<char>>& board, int y, int x) {
-    int nx = (x + 1) % 9;
-    int ny = y + (x + 1) / 9;
-
-    if (ny == 9) {
-      return true;
-    }
-    if (board[y][x] == '.') {
-      for (int i = 0; i < 9; i++) {
-        board[y][x] = i + '1';
-        if (isValidVLine(board, x) && isValidHLine(board, y) 
-            && isValidSquare(board, y - y % 3, x - x % 3) && dfs(board, ny, nx)) {
-          return true;
-        }
-      }
-      board[y][x] = '.';
-      return false;
-    }
-    return dfs(board, ny, nx);
-  }
-
   bool isValidSudoku(vector<vector<char>>& board) {
     for (int i = 0; i < 9; i++) {
       if (!isValidVLine(board, i)) {

@@ -91,12 +91,13 @@ public:
       return head;
     }
     ListNode *fast = head;
-    for (int i = 0; i < n; i++) {
-      fast = fast->next;
-    }
+
+
+
     if (fast == nullptr) {
-
-
+      ListNode *next = head->next;
+      head->next = nullptr;
+      return next;
     }
     ListNode *slow = head;
     while (fast->next) {
