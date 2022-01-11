@@ -70,18 +70,18 @@ typedef pair<int, int> ii;
 class Solution {
 public:
   bool wordBreak(string s, vector<string>& wordDict) {
-    vector<int> dp(   );
+    vector<int> dp(s.size() + 1);
     dp[0] = 1;
     for (int i = 0; i < s.size(); i++) {
       if (dp[i]) {
         for (string word : wordDict) {
           if (s.compare(i, word.size(), word) == 0) {
-            dp[   ] = true;
+            dp[i + word.size()] = true;
           }
         }
       }
     }
-    return dp[    ];
+    return dp[s.size()];
   }
 };
 
