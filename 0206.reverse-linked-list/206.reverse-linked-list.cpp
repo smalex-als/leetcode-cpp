@@ -62,11 +62,7 @@ public:
     ListNode* cur = head;
     while (cur) {
       ListNode *next = cur->next;
-      if (newHead != nullptr) {
-        cur->next = newHead;
-      } else {
-        cur->next = nullptr;
-      }
+      cur->next = newHead;
       newHead = cur;
       cur = next;
     }

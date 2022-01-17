@@ -1,15 +1,10 @@
-#include <iostream>
-#include <vector>
-#include <map>
-#include <set>
-#include <stack>
-#include <algorithm>
-#include <array>
-#include <unordered_map>
-#include <queue>
-#include <unordered_set>
-#include <iomanip>
-#include <zconf.h>
+#include <bits/stdc++.h>
+
+#ifdef LOCAL
+#include "debug.h"
+#else
+#define debug(...) 42
+#endif
 
 #define pb push_back
 #define sz(v) ((int)(v).size())
@@ -20,6 +15,7 @@ using namespace std;
 typedef long long int64;
 typedef vector<int> vi;
 typedef pair<int, int> ii;
+
 /*
  * @lc app=leetcode id=394 lang=cpp
  *
@@ -75,28 +71,6 @@ typedef pair<int, int> ii;
 class Solution {
   public:
     string solve(string &s, int &pos) {
-      string res;
-      int number = 0;
-      while (pos < s.size()) {
-        if (s[pos] >= '0' && s[pos] <= '9') {
-          number *= 10;
-          number += s[pos] - '0';
-          pos++;
-        } else if (s[pos] == '[') {
-          pos++;
-          string col = solve(s, pos);
-          for (int i = 0; i < number; i++) {
-            res += col;   
-          }
-          number = 0;
-        } else if (s[pos] == ']') {
-          pos++;
-          return res;
-        } else {
-          res += s[pos];
-          pos++;
-        }
-      }
       return res;
     }
 
