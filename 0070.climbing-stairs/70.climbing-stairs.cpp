@@ -1,3 +1,21 @@
+#include <bits/stdc++.h>
+
+#ifdef LOCAL
+#include "debug.h"
+#else
+#define debug(...) 42
+#endif
+
+#define pb push_back
+#define sz(v) ((int)(v).size())
+#define all(v) (v).begin(),(v).end()
+
+using namespace std;
+
+typedef long long int64;
+typedef vector<int> vi;
+typedef pair<int, int> ii;
+
 /*
  * @lc app=leetcode id=70 lang=cpp
  *
@@ -48,7 +66,25 @@
  */
 class Solution {
 public:
-    int climbStairs(int n) {
-        
-    }
+  int climbStairs(int n) {
+    vector<int> dp(n + 5);
+    dp[0] = 1;
+    dp[1] = 1;
+    for (int i = 2; i <= n; i++) {
+      dp[i] = dp[i-1] + dp[i-2];
+    } 
+    return dp[n];
+  }
 };
+
+int main() {
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+  int t;
+  cin >> t;
+  while (t--) {
+    int n;
+    cin >> n;
+    cout << (new Solution())->climbStairs(n) << endl;
+  }
+}
