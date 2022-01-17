@@ -1,3 +1,21 @@
+#include <bits/stdc++.h>
+
+#ifdef LOCAL
+#include "debug.h"
+#else
+#define debug(...) 42
+#endif
+
+#define pb push_back
+#define sz(v) ((int)(v).size())
+#define all(v) (v).begin(),(v).end()
+
+using namespace std;
+
+typedef long long int64;
+typedef vector<int> vi;
+typedef pair<int, int> ii;
+
 /*
  * @lc app=leetcode id=746 lang=cpp
  *
@@ -56,7 +74,32 @@
  */
 class Solution {
 public:
-    int minCostClimbingStairs(vector<int>& cost) {
-        
+  int minCostClimbingStairs(vector<int>& a) {
+    int n = a.size();
+    vector<int> dp(n + 5, 1e6);
+    dp[0] = 0;
+    dp[1] = 0;
+    for (int i = 0; i < n; i++) {
+      int cost = dp[i] + a[i];
+      dp[i + 1] = min(dp[i + 1], cost);
+      dp[i + 2] = min(dp[i + 2], cost);
     }
+    return dp[n];
+  }
 };
+
+int main() {
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+  int t;
+  cin >> t;
+  while (t--) {
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+      cin >> a[i];
+    }
+    cout << (new Solution())->minCostClimbingStairs(a) << endl;
+  }
+}
