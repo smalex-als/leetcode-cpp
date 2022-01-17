@@ -1,15 +1,11 @@
-#include <iostream>
-#include <vector>
-#include <map>
-#include <set>
-#include <stack>
-#include <algorithm>
-#include <array>
-#include <unordered_map>
-#include <queue>
-#include <unordered_set>
-#include <iomanip>
-#include <zconf.h>
+#include <bits/stdc++.h>
+#include "list.hpp"
+
+#ifdef LOCAL
+#include "debug.h"
+#else
+#define debug(...) 42
+#endif
 
 #define pb push_back
 #define sz(v) ((int)(v).size())
@@ -20,6 +16,7 @@ using namespace std;
 typedef long long int64;
 typedef vector<int> vi;
 typedef pair<int, int> ii;
+
 //Given the head of a singly linked list and two integers left and right where 
 //left <= right, reverse the nodes of the list from position left to position 
 //right, and return the reversed list. 
@@ -58,14 +55,6 @@ typedef pair<int, int> ii;
 /**
  * Definition for singly-linked list.
  */
-struct ListNode {
-  int val;
-  ListNode *next;
-  ListNode() : val(0), next(nullptr) {}
-  ListNode(int x) : val(x), next(nullptr) {}
-  ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
- 
 struct LinkedList {
   ListNode *head = nullptr;
   ListNode *tail = nullptr;
@@ -128,51 +117,12 @@ public:
     LinkedList *src = new LinkedList();
     src->head = head;
     LinkedList *dst = new LinkedList();
-    for (int i = 1; i < left && !src->Empty(); i++) {
-      dst->PushBack(src->PopFront());
-    }
-    LinkedList *tmp = new LinkedList();
-    for (int i = left; i <= right && !src->Empty(); i++) {
-      tmp->PushFront(src->PopFront());
-    }
-    dst->Append(tmp);
-    while (!src->Empty()) {
-      dst->PushBack(src->PopFront());
-    }
+
+
+
     return dst->head;
   }
 };
-
-ListNode *makeList(vector<int> a) {
-  ListNode *head = nullptr;
-  ListNode *tail = nullptr;
-  for (int i : a) {
-    ListNode *node = new ListNode(i);
-    if (tail != nullptr) {
-      tail->next = node;
-    }
-    if (head == nullptr) {
-      head = node;
-    }
-    tail = node;
-  }
-  return head;
-}
-
-string to_string(ListNode *head) {
-  string res;
-  ListNode *cur = head;
-  bool first = true;
-  while (cur) {
-    if (!first) {
-      res += " ";
-    }
-    first = false;
-    res += to_string(cur->val);
-    cur = cur->next;
-  }
-  return res;
-}
 
 int main() {
   Solution *sol = new Solution();

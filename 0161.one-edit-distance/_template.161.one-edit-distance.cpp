@@ -86,10 +86,7 @@ typedef pair<int, int> ii;
 class Solution {
 public:
   bool isOneEditDistance(string s, string t) {
-    if (abs((int)s.size() - (int)t.size()) > 1) {
-      return false;
-    }
-    return true;
+    return false;
   }
 };
 

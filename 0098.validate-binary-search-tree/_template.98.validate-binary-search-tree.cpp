@@ -82,10 +82,6 @@ typedef pair<int, int> ii;
 class Solution {
 public:
   bool traverse(TreeNode* node, TreeNode* l, TreeNode *r) {
-    if (node == nullptr) {
-      return true;
-    }
-    return traverse(node->left, l, node) && traverse(node->right, node, r);
   }
 
   bool isValidBST(TreeNode* root) {

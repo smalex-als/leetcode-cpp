@@ -1,16 +1,10 @@
-#include <iostream>
-#include <vector>
-#include <map>
-#include <set>
-#include <stack>
-#include <algorithm>
-#include <array>
-#include <unordered_map>
-#include <queue>
-#include <unordered_set>
-#include <iomanip>
-#include <zconf.h>
-#include "tree.hpp"
+#include <bits/stdc++.h>
+
+#ifdef LOCAL
+#include "debug.h"
+#else
+#define debug(...) 42
+#endif
 
 #define pb push_back
 #define sz(v) ((int)(v).size())

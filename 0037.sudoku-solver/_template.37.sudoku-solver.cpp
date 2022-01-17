@@ -69,44 +69,7 @@ typedef pair<int, int> ii;
  */
 class Solution {
 public:
-  bool row[9][9];
-  bool col[9][9];
-  bool cell[3][3][9];
-
-  bool dfs(vector<vector<char>>& board, int y, int x) {
-    if (y == 9) {
-      return true;
-    }
-    int nx = (x + 1) % 9;
-    int ny = y + (x + 1) / 9;
-
-    if (board[y][x] != '.') {
-      return dfs(board, ny, nx);
-    }
-    for (int i = 0; i < 9; i++) {
-      if (col[x][i] || row[y][i] || cell[y/3][x/3][i]) {
-        continue;
-      }
-      // problem 1
-      if (dfs(board, ny, nx)) {
-        return true;
-      }
-      // problem 2
-    }
-    board[y][x] = '.';
-    return false;
-  }
-
   void solveSudoku(vector<vector<char>>& board) {
-    for (int i = 0; i < 9; i++) {
-      for (int j = 0; j < 9; j++) {
-        if (board[i][j] != '.') {
-          int val = board[i][j] - '1';
-          row[i][val] = col[j][val] = cell[i/3][j/3][val] = true;
-        } 
-      }
-    }
-    dfs(board, 0, 0);
   }
 };
 

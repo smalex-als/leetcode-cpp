@@ -1,15 +1,11 @@
-#include <iostream>
-#include <vector>
-#include <map>
-#include <set>
-#include <stack>
-#include <algorithm>
-#include <array>
-#include <unordered_map>
-#include <queue>
-#include <unordered_set>
-#include <iomanip>
-#include <zconf.h>
+#include <bits/stdc++.h>
+#include "list.hpp"
+
+#ifdef LOCAL
+#include "debug.h"
+#else
+#define debug(...) 42
+#endif
 
 #define pb push_back
 #define sz(v) ((int)(v).size())
@@ -20,6 +16,7 @@ using namespace std;
 typedef long long int64;
 typedef vector<int> vi;
 typedef pair<int, int> ii;
+
 //Given the head of a singly linked list, reverse the list, and return the 
 //reversed list. 
 //
@@ -58,19 +55,6 @@ typedef pair<int, int> ii;
 //Could you implement both? 
 // Related Topics Linked List Recursion 👍 8935 👎 158
 
-
-/**
- * Definition for singly-linked list.
- */
-  struct ListNode {
-      int val;
-      ListNode *next;
-      ListNode() : val(0), next(nullptr) {}
-      ListNode(int x) : val(x), next(nullptr) {}
-      ListNode(int x, ListNode *next) : val(x), next(next) {}
-  };
- 
-
 class Solution {
 public:
   ListNode* reverseList(ListNode* head) {
@@ -90,31 +74,6 @@ public:
   }
 };
 
-ListNode *makeList(vector<int> a) {
-  ListNode *head = nullptr;
-  ListNode *tail = nullptr;
-  for (int i : a) {
-    ListNode *node = new ListNode(i);
-    if (tail != nullptr) {
-      tail->next = node;
-    }
-    if (head == nullptr) {
-      head = node;
-    }
-    tail = node;
-  }
-  return head;
-}
-
-void Dump(ListNode *head) {
-  ListNode *cur = head;
-  while (cur) {
-    cout << cur->val << " ";
-    cur = cur->next;
-  }
-  cout << endl;
-}
-
 int main() {
   ios::sync_with_stdio(false);
   cin.tie(0);
@@ -129,7 +88,7 @@ int main() {
       cin >> a[i];
     }
     Solution *sol = new Solution();
-    Dump(sol->reverseList(makeList(a)));
+    cout << to_string(sol->reverseList(makeList(a))) << endl;
   }
 }
 
