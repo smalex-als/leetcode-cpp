@@ -72,27 +72,8 @@ typedef pair<int, int> ii;
  */
 class Solution {
 public:
-  int expand(string &s, int l, int r) {
-    while (l >= 0 && r < s.size() && s[l] == s[r]) {
-      l--;
-      r++;
-    }
-    return r - l - 1;
-  }
-
   string longestPalindrome(string s) {
-    int mx = 0;
-    string ans = "";
-    for (int i = 0; i < s.size(); i++) {
-      int ln1 = expand(s, i, i+1);
-      int ln2 = expand(s, i, i);
-      int cur = max(ln1, ln2);
-      if (mx < cur) {
-        ans = s.substr(i - (cur-1)/2, cur);
-        mx = cur;
-      }
-    }
-    return ans;
+    return "";
   }
 };
 
