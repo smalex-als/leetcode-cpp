@@ -1,3 +1,21 @@
+#include <bits/stdc++.h>
+
+#ifdef LOCAL
+#include "debug.h"
+#else
+#define debug(...) 42
+#endif
+
+#define pb push_back
+#define sz(v) ((int)(v).size())
+#define all(v) (v).begin(),(v).end()
+
+using namespace std;
+
+typedef long long int64;
+typedef vector<int> vi;
+typedef pair<int, int> ii;
+
 /*
  * @lc app=leetcode id=213 lang=cpp
  *
@@ -59,7 +77,40 @@
  */
 class Solution {
 public:
-    int rob(vector<int>& nums) {
-        
+  int solve(vector<int>& a, int start, int n) {
+    if (n == 1) {
+      return a[start];
     }
+    vector<int> dp(n);
+    dp[0] = a[start];
+    dp[1] = max(a[start], a[start + 1]);
+    for (int i = 2; i < n; i++) {
+      dp[i] = max(a[start + i] + dp[i-2], dp[i-1]);
+    }
+    return dp[n-1];
+  }
+
+  int rob(vector<int>& a) {
+    int n = a.size();
+    if (n == 1) {
+      return a[0];
+    }
+    return max(solve(a, 0, n - 1), solve(a, 1, n - 1));
+  }
 };
+
+int main() {
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+  int t;
+  cin >> t;
+  while (t--) {
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+      cin >> a[i];
+    }
+    cout << (new Solution())->rob(a) << endl;
+  }
+}
