@@ -68,20 +68,6 @@ typedef pair<int, int> ii;
 class Solution {
 public:
   int jump(vector<int>& nums) {
-    if (nums.size() < 2) {
-      return 0;
-    }
-    int ans = 0;
-    int mx = 0;
-    int next_mx = 0;
-    for (int i = 0; i < nums.size(); i++) {
-      if (i > mx) {
-        mx = next_mx;
-        ans++;
-      }
-      next_mx = max(next_mx, i + nums[i]);
-    }
-    return ans;
   }
 };
 
