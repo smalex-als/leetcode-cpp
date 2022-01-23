@@ -1,3 +1,21 @@
+#include <bits/stdc++.h>
+
+#ifdef LOCAL
+#include "debug.h"
+#else
+#define debug(...) 42
+#endif
+
+#define pb push_back
+#define sz(v) ((int)(v).size())
+#define all(v) (v).begin(),(v).end()
+
+using namespace std;
+
+typedef long long int64;
+typedef vector<int> vi;
+typedef pair<int, int> ii;
+
 /*
  * @lc app=leetcode id=918 lang=cpp
  *
@@ -58,8 +76,32 @@
  * 
  */
 class Solution {
-public:
-    int maxSubarraySumCircular(vector<int>& nums) {
-        
+  public:
+      int maxSubarraySumCircular(vector<int>& A) {
+        int total = 0, maxSum = A[0], curMax = 0, minSum = A[0], curMin = 0;
+        for (int& a : A) {
+            curMax = max(curMax + a, a);
+            maxSum = max(maxSum, curMax);
+            curMin = min(curMin + a, a);
+            minSum = min(minSum, curMin);
+            total += a;
+        }
+        return maxSum > 0 ? max(maxSum, total - minSum) : maxSum;
     }
 };
+
+int main() {
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+  int t;
+  cin >> t;
+  while (t--) {
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+      cin >> a[i];
+    }
+    cout << (new Solution())->maxSubarraySumCircular(a) << endl;
+  }
+}
