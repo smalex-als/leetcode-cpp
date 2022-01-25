@@ -1,15 +1,10 @@
-#include <iostream>
-#include <vector>
-#include <map>
-#include <set>
-#include <stack>
-#include <algorithm>
-#include <array>
-#include <unordered_map>
-#include <queue>
-#include <unordered_set>
-#include <iomanip>
-#include <zconf.h>
+#include <bits/stdc++.h>
+
+#ifdef LOCAL
+#include "debug.h"
+#else
+#define debug(...) 42
+#endif
 
 #define pb push_back
 #define sz(v) ((int)(v).size())
@@ -20,6 +15,7 @@ using namespace std;
 typedef long long int64;
 typedef vector<int> vi;
 typedef pair<int, int> ii;
+
 /*
  * @lc app=leetcode id=1293 lang=cpp
  *
@@ -82,7 +78,7 @@ public:
     // At a particular cell we will store the number of obstacles 
     // that we can still remove after walking through that cell
     vector<vector<int>> vis(grid.size(), vector<int>(m, -1));
-    queue<vector<int>> q;
+    queue<?> q;
 
     // queue stores (x,y,current path length,number of obstacles we can still remove)
     q.push({0, 0, 0, k});

@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include "tree.hpp"
 
 #ifdef LOCAL
 #include "debug.h"

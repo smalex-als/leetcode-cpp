@@ -1,15 +1,10 @@
-#include <iostream>
-#include <vector>
-#include <map>
-#include <set>
-#include <stack>
-#include <algorithm>
-#include <array>
-#include <unordered_map>
-#include <queue>
-#include <unordered_set>
-#include <iomanip>
-#include <zconf.h>
+#include <bits/stdc++.h>
+
+#ifdef LOCAL
+#include "debug.h"
+#else
+#define debug(...) 42
+#endif
 
 #define pb push_back
 #define sz(v) ((int)(v).size())
@@ -20,6 +15,7 @@ using namespace std;
 typedef long long int64;
 typedef vector<int> vi;
 typedef pair<int, int> ii;
+
 /*
  * @lc app=leetcode id=1834 lang=cpp
  *
@@ -33,9 +29,9 @@ typedef pair<int, int> ii;
  * Total Submissions: 55.1K
  * Testcase Example:  '[[1,2],[2,4],[3,2],[4,1]]'
  *
- * You are given n​​​​​​ tasks labeled from 0 to n - 1 represented by a 2D
+ * You are given n tasks labeled from 0 to n - 1 represented by a 2D
  * integer array tasks, where tasks[i] = [enqueueTimei, processingTimei] means
- * that the i^​​​​​​th​​​​ task will be available to process at enqueueTimei
+ * that the i^th task will be available to process at enqueueTimei
  * and will take processingTimei to finish processing.
  * 
  * You have a single-threaded CPU that can process at most one task at a time

@@ -1,15 +1,11 @@
-#include <iostream>
-#include <vector>
-#include <map>
-#include <set>
-#include <stack>
-#include <algorithm>
-#include <array>
-#include <unordered_map>
-#include <queue>
-#include <unordered_set>
-#include <iomanip>
-#include <zconf.h>
+#include <bits/stdc++.h>
+#include "tree.hpp"
+
+#ifdef LOCAL
+#include "debug.h"
+#else
+#define debug(...) 42
+#endif
 
 #define pb push_back
 #define sz(v) ((int)(v).size())
@@ -20,6 +16,7 @@ using namespace std;
 typedef long long int64;
 typedef vector<int> vi;
 typedef pair<int, int> ii;
+
 /*
  * @lc app=leetcode id=543 lang=cpp
  *
@@ -68,18 +65,6 @@ typedef pair<int, int> ii;
  * 
  */
 
-/**
- * Definition for a binary tree node.
- */
-struct TreeNode {
-  int val;
-  TreeNode *left;
-  TreeNode *right;
-  TreeNode() : val(0), left(nullptr), right(nullptr) {}
-  TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-  TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
-};
-
 class Solution {
 public:
   int mx = 0;
@@ -91,7 +76,7 @@ public:
     int l = solve(node->left);
     int r = solve(node->right);
     
-    return l + r + 1;
+    return XXX
   }
 
   int diameterOfBinaryTree(TreeNode* root) {
@@ -100,34 +85,6 @@ public:
     return mx;
   }
 };
-
-TreeNode *makeTree(vector<int> &a, int &pos, int val) {
-  TreeNode *node = new TreeNode(val);
-  if (pos < a.size()) {
-    int leftVal = a[pos];
-    int rightVal = INT_MAX;
-    pos++;
-    if (pos < a.size()) {
-      rightVal = a[pos];
-      pos++;
-    }
-    node->left = makeTree(a, pos, leftVal);
-    if (rightVal != INT_MAX) {
-      node->right = makeTree(a, pos, rightVal);
-    }
-  }
-  return node;
-}
-
-TreeNode *makeTree(vector<int> &a) {
-  int pos = 0;
-  if (pos < a.size()) {
-    int val = a[pos];
-    pos++;
-    return makeTree(a, pos, val);
-  }
-  return NULL;
-}
 
 int main() {
   ios::sync_with_stdio(false);

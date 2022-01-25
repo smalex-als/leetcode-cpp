@@ -1,15 +1,10 @@
-#include <iostream>
-#include <vector>
-#include <map>
-#include <set>
-#include <stack>
-#include <algorithm>
-#include <array>
-#include <unordered_map>
-#include <queue>
-#include <unordered_set>
-#include <iomanip>
-#include <zconf.h>
+#include <bits/stdc++.h>
+
+#ifdef LOCAL
+#include "debug.h"
+#else
+#define debug(...) 42
+#endif
 
 #define pb push_back
 #define sz(v) ((int)(v).size())
@@ -98,17 +93,11 @@ public:
       suffix[ch]++;
     }
     int res = 0;
-    int l = 0;
-    for (int i = 0; i < s.size(); i++) {
-      prefix[s[i]]++;
-      if (suffix[s[i]] == 1) {
-        suffix.erase(s[i]);
-      } else {
-        suffix[s[i]]--;
-      }
-      if (prefix.size() == suffix.size()) {
-        res++;
-      }
+    for (char ch : s) {
+
+
+
+
     }
     return res;
   }

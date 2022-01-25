@@ -10,6 +10,7 @@
 #include <unordered_set>
 #include <iomanip>
 #include <zconf.h>
+#include "tree.hpp"
 
 #define pb push_back
 #define sz(v) ((int)(v).size())

@@ -1,15 +1,10 @@
-#include <iostream>
-#include <vector>
-#include <map>
-#include <set>
-#include <stack>
-#include <algorithm>
-#include <array>
-#include <unordered_map>
-#include <queue>
-#include <unordered_set>
-#include <iomanip>
-#include <zconf.h>
+#include <bits/stdc++.h>
+
+#ifdef LOCAL
+#include "debug.h"
+#else
+#define debug(...) 42
+#endif
 
 #define pb push_back
 #define sz(v) ((int)(v).size())
@@ -20,6 +15,7 @@ using namespace std;
 typedef long long int64;
 typedef vector<int> vi;
 typedef pair<int, int> ii;
+
 /*
  * @lc app=leetcode id=981 lang=cpp
  *
@@ -98,8 +94,7 @@ public:
   }
 
   string get(string key, int timestamp) {
-    auto it = storage[key].lower_bound(-timestamp);
-    return it == storage[key].end() ? "" : it->second;
+    return XXXX
   }
 };
 

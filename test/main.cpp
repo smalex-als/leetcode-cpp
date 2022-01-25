@@ -1,15 +1,10 @@
-#include <iostream>
-#include <vector>
-#include <map>
-#include <set>
-#include <stack>
-#include <algorithm>
-#include <array>
-#include <unordered_map>
-#include <queue>
-#include <unordered_set>
-#include <iomanip>
-#include <zconf.h>
+#include <bits/stdc++.h>
+
+#ifdef LOCAL
+#include "debug.h"
+#else
+#define debug(...) 42
+#endif
 
 #define pb push_back
 #define sz(v) ((int)(v).size())
@@ -37,15 +32,6 @@ int main() {
     }
     cout << endl;
   };
-  // function<void(int)> Dfs = [&](int v) {
-  //   auto it = mp.upper_bound(v);
-  //   cout << "search " << v << " ";
-  //   if (it == mp.begin()) {
-  //     cout << "not found\n";
-  //   } else {
-  //     cout << prev(it)->second << endl;
-  //   }
-  // };
   for (int i = 0; i < 50; i++) {
     Dfs(i);
   }

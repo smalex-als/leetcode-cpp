@@ -1,15 +1,10 @@
-#include <iostream>
-#include <vector>
-#include <map>
-#include <set>
-#include <stack>
-#include <algorithm>
-#include <array>
-#include <unordered_map>
-#include <queue>
-#include <unordered_set>
-#include <iomanip>
-#include <zconf.h>
+#include <bits/stdc++.h>
+
+#ifdef LOCAL
+#include "debug.h"
+#else
+#define debug(...) 42
+#endif
 
 #define pb push_back
 #define sz(v) ((int)(v).size())
@@ -20,6 +15,7 @@ using namespace std;
 typedef long long int64;
 typedef vector<int> vi;
 typedef pair<int, int> ii;
+
 /*
  * @lc app=leetcode id=359 lang=cpp
  *
@@ -102,7 +98,7 @@ public:
     }
     mp[message] = timestamp + 10;
     a.push_back({timestamp + 10, message});
-    while (a.size() > 0 && a.front().first < timestamp) {
+    while (       ) {
       pair<int,string> cur = a.front();
       a.pop_front();
       if (mp[cur.second] == cur.first) {
